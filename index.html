@@ -120,7 +120,10 @@
   .playhint{position:absolute;bottom:12px;right:12px;z-index:2;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-2);background:rgba(13,16,19,0.72);backdrop-filter:blur(6px);border:1px solid var(--border);border-radius:6px;padding:4px 9px;display:flex;align-items:center;gap:5px}
   .body{padding:26px 28px}
   .body .pname{font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:600;color:var(--text);letter-spacing:-0.01em;margin-bottom:4px}
-  .body .plat{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--text-2);margin-bottom:18px}
+  .body .plat{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--text-2);margin-bottom:14px}
+  .body .plain{font-size:14.5px;color:var(--text);line-height:1.7;border-left:2px solid var(--accent);padding:2px 0 2px 12px;margin-bottom:18px}
+  .row.result .k{color:var(--amber)}
+  .row.result .v{color:var(--text);font-weight:400}
   .rows{display:flex;flex-direction:column;gap:12px}
   .row{display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:start}
   .row .k{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-3);padding-top:2px}
@@ -166,8 +169,9 @@
     <div class="role">Unity Developer / Interactive &amp; Exhibition Content</div>
     <p class="summary">
       Unity 기반으로 전시·인터랙티브 콘텐츠 <strong>30여 건의 Unity 개발을 1인으로 담당</strong>했습니다.
-      RS-232 시리얼·소켓 통신, KINECT·PICO SDK 기반 인터랙션과 Leap Motion·LiDAR 등 센서 입력 데이터를 활용한 콘텐츠를 개발해왔으며,
-      흔들리거나 끊기는 입력에 대응하고 <strong>무인 환경에서 장기간 운영</strong>될 수 있도록 자동 초기화·복귀를 설계하는 데 강점이 있습니다.
+      센서·물리 버튼·VR 기기의 입력을 RS-232 시리얼·소켓 통신으로 받아, 띄엄띄엄 오거나 끊기는 신호에도 화면이 자연스럽게 반응하도록 만들고,
+      관리자 없이 <strong>1년 이상 무인으로 운영</strong>되는 구조를 설계하는 데 강점이 있습니다.
+      최근에는 <strong>Claude를 개발에 도입</strong>해 1~2일 걸리던 코드 작업을 2~4시간 안에 처리하고 있습니다.
     </p>
     <div class="contact">
       <span class="lbl">EMAIL</span><a href="mailto:azaz88888@naver.com">azaz88888@naver.com</a>
@@ -175,7 +179,8 @@
 
     <div class="stats">
       <div class="stat"><div class="num">30<span class="u">+</span></div><div class="cap">전시 콘텐츠 개발</div></div>
-      <div class="stat"><div class="num">1<span class="u">인</span></div><div class="cap">Unity 개발 단독 담당</div></div>
+      <div class="stat"><div class="num">40<span class="u">대</span></div><div class="cap">VR 기기 동시 제어</div></div>
+      <div class="stat"><div class="num">1<span class="u">년+</span></div><div class="cap">관리자 없이 무인 운영</div></div>
       <div class="stat"><div class="num">3<span class="u">년+</span></div><div class="cap">현장 납품 경력</div></div>
     </div>
   </div>
@@ -185,12 +190,12 @@
   <div class="wrap">
     <div class="sec-head"><div class="sec-title"><span class="idx">01</span>핵심 강점</div></div>
     <div class="strengths">
-      <div class="str"><div class="ic">🔌</div><h3>하드웨어·센서 연동</h3><p>RS-232 시리얼·소켓 통신 구현, KINECT·PICO SDK 활용, 회사 기존 모듈로 수신한 Leap Motion·LiDAR·IR 센서 데이터의 콘텐츠 적용</p></div>
-      <div class="str"><div class="ic">🎚️</div><h3>입력 안정화</h3><p>보간·예외 처리·타임아웃으로 떨림·끊김·중복 입력에 대응</p></div>
-      <div class="str"><div class="ic">🛡️</div><h3>무인 안정성 설계</h3><p>관리자 없이 운영되는 전시 환경을 위한 미입력 자동 초기화·메인 복귀 설계</p></div>
+      <div class="str"><div class="ic">🔌</div><h3>하드웨어·센서 연동</h3><p>RS-232 시리얼·소켓 통신 구현, KINECT·PICO SDK 활용, Leap Motion·LiDAR·IR 센서 데이터(회사 수신 모듈 경유)를 받아 판정·게임 로직으로 연결</p></div>
+      <div class="str"><div class="ic">🎚️</div><h3>입력 안정화</h3><p>띄엄띄엄 오는 센서 좌표는 보간으로 부드럽게, 중복 신호는 상태 플래그로 차단, 통신 끊김은 주기적 확인 신호로 감지해 자동 재연결</p></div>
+      <div class="str"><div class="ic">🛡️</div><h3>무인 운영·최적화</h3><p>미입력 자동 초기화·메인 복귀 설계, 저사양 미니 PC에서 프로그램 메모리 사용량(RAM)을 1GB 이상에서 200~400MB로 60% 이상 줄여, 장시간 켜 두면 꺼지던 문제 해소</p></div>
     </div>
     <div class="stack">
-      <span class="chip on">C#</span><span class="chip on">Unity</span>
+      <span class="chip on">C#</span><span class="chip on">Unity</span><span class="chip on">Claude (AI 활용)</span>
       <span class="chip">VR (PICO / Vive)</span><span class="chip">RS-232 시리얼</span>
       <span class="chip">소켓 통신</span><span class="chip">LiDAR 데이터 활용</span>
       <span class="chip">Leap Motion 데이터 활용</span><span class="chip">KINECT SDK</span><span class="chip">AR 마커</span>
@@ -210,7 +215,18 @@
 
 <section class="sec">
   <div class="wrap">
-    <div class="sec-head"><div class="sec-title"><span class="idx">03</span>그 외 프로젝트</div></div>
+    <div class="sec-head"><div class="sec-title"><span class="idx">03</span>AI 활용 · 협업</div></div>
+    <div class="strengths">
+      <div class="str"><div class="ic">🤖</div><h3>AI 활용 개발</h3><p>2026년 7월부터 Claude를 소켓·시리얼 통신 기본 세팅, 기능 구현, 기존 프로젝트 파악·리팩터링에 활용. 1~2일 걸리던 코드 작업을 2~4시간 안에 처리</p></div>
+      <div class="str"><div class="ic">✅</div><h3>AI 결과 검증</h3><p>생성된 코드의 사용 기술·동작 방식을 설명받아 의도와 대조하고 직접 실행해 확인. 틀린 답은 짚어 정정한 뒤 작업 규칙에 반영해 재발 방지. 직접 만든 커스텀 툴은 지금도 사용 중</p></div>
+      <div class="str"><div class="ic">🤝</div><h3>협업·공유</h3><p>요구사항이 애매하면 간단한 프로토타입으로 기획 의도를 확인하고, 큰 수정은 완성된 기능부터 현장에 세팅해 단계적으로 반영. 자주 쓰는 통신·타임아웃 모듈을 패키지로 만들어 사내 공유</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head"><div class="sec-title"><span class="idx">04</span>그 외 프로젝트</div></div>
     <div class="groups">
       <div class="grp"><div class="grp-h"><span class="ic">〜</span><h3>센서 체감형 인터랙티브</h3></div><p>회사 기존 모듈로 전달받은 HOKUYO(LiDAR)·IR 센서 데이터와 KINECT SDK로 얻은 사람의 위치·움직임, 조준 지점에 반응하는 벽면·바닥 인터랙티브</p><div class="tags"><span class="tag">용산어린이대공원</span><span class="tag">제주신화월드</span><span class="tag">성동구청 무지깨비숲</span><span class="tag">고령 대가야수목원</span><span class="tag">강릉 오대산(IR)</span></div></div>
       <div class="grp"><div class="grp-h"><span class="ic">🥽</span><h3>VR 안전체험</h3></div><p>PICO·Vive 기반 산업안전·재난대응 체험</p><div class="tags"><span class="tag">SK hynix 우시(Vive)</span><span class="tag">여수 LG화학</span></div></div>
@@ -232,31 +248,40 @@
 
 <script>
 const projects=[
-  {name:"과천과학관 백혈구어벤져스",type:"game",badge:["핸드트래킹","게임"],platform:"Unity (Windows) · Leap Motion (회사 기존 수신 모듈 활용)",
+  {name:"과천과학관 백혈구어벤져스",type:"game",badge:["핸드트래킹","게임"],platform:"Unity (Windows) · Leap Motion (회사 기존 수신 모듈 활용) · 미니 PC",
    img:"assets/img/gwacheon.png",video:"assets/video/gwacheon.mp4",
+   plain:"손을 움직이고 주먹을 쥐어 화면 속 바이러스를 잡는 게임. 센서 신호가 띄엄띄엄 들어와도 화면 속 손이 끊김 없이 부드럽게 따라옵니다.",
    feature:"손 동작으로 바이러스를 잡는 3단계 핸드트래킹 게임(제한시간·체력·점수). 주먹 쥐기로 포획 / 카드 짝 맞추기 / V자 제스처로 디버프 발동",
-   challenge:"핸드트래킹 특유의 좌표 떨림·인식 끊김으로 조작이 불안정, 여러 제스처를 각기 다른 액션으로 구분 판정",
-   impl:"회사 기존 모듈이 전달하는 Leap Motion 손 좌표·제스처 데이터를 Unity에서 받아 활용(센서 SDK는 직접 다루지 않음), 주먹 쥐는 타이밍에 Collider 겹침으로 포획 판정, Lerp로 추적 보간, 1초 이상 미인식 시 오브젝트 비활성화, 제한시간·체력·점수 게임 루프 구현, 미니 PC 구동을 위한 최적화"},
-  {name:"과천 어린이대공원 원더파크",type:"game",badge:["LiDAR","게임"],platform:"Unity (Windows) · LiDAR ×2 (회사 기존 수신 모듈 활용) · KINECT",
+   challenge:"센서가 0.25~0.5초 간격(1초에 2~4번)으로만 손 위치를 보내 그대로 적용하면 움직임이 렉 걸린 듯 뚝뚝 끊김. 미니 PC에서 장시간 구동 시 메모리가 1GB 이상 쌓여 프로그램이 종료됨",
+   impl:"받은 손 좌표 사이를 Lerp로 보간해 부드럽게 추적, 신호가 1초(2~4회 연속) 끊기면 체험자 이탈로 판단해 오브젝트 비활성화, 인식된 제스처를 포획·카드·디버프 등 게임 동작에 연결하고 Collider 겹침으로 포획 판정, 영상 교체마다 new로 생성만 하던 RenderTexture를 사용 후 Release·Destroy하도록 수정",
+   result:"프로그램 메모리 사용량(RAM) 1GB 이상 → 200~400MB로 60% 이상 절감해 미니 PC에서 장시간 켜 두어도 꺼지지 않게 함, 평일 하루 약 100명 내외 체험"},
+  {name:"과천 어린이대공원 원더파크",type:"game",badge:["LiDAR","게임"],platform:"Unity (Windows) · LiDAR ×2 (회사 기존 수신 모듈 활용) · 프로젝터 2대",
    img:"assets/img/wonderpark.png",video:"assets/video/wonderpark.mp4",
-   feature:"벽면에 실제로 공을 던지면 맞은 지점의 오염물이 제거되는 대형 벽면 인터랙티브. 다중 동시 타격·무인 자동 운영",
-   challenge:"넓은 파노라마 벽면에서 여러 명이 동시에 던진 공의 타격 좌표를 누락 없이 처리하고, 각 좌표를 화면 속 오브젝트 타격 판정으로 정확히 연결",
-   impl:"이전 회사에 구성되어 있던 LiDAR 처리 모듈이 소켓으로 전달하는 타격 좌표를 Unity에서 받아 활용(센서 SDK는 직접 다루지 않음), 구분자 파싱으로 다중 타격을 분리해 Raycast + Rigidbody/Collider로 판정, 미입력 시 자동 초기화·클리어 연출 후 리셋"},
-  {name:"대전 SK텔레콤 안전체험교육관",type:"vr",badge:["VR","소켓"],platform:"Unity (Android) · PICO G3 VR",
+   plain:"벽에 공을 던지면 맞은 자리의 오염물이 사라집니다. 여러 명이 동시에 던져도 각자의 공이 따로 판정됩니다.",
+   feature:"벽면에 실제로 공을 던지면 맞은 지점의 오염물이 제거되는 대형 파노라마 벽면 인터랙티브. 다중 동시 타격·무인 자동 운영",
+   challenge:"여러 명이 동시에 던진 공의 타격 좌표가 한 줄 문자열로 묶여 들어와, 이를 누락 없이 분리하고 각 좌표를 화면 속 오브젝트 타격 판정으로 정확히 연결해야 함",
+   impl:"LiDAR 처리 모듈이 소켓으로 보내는 \"1920:600/1280:600/…\" 형식의 다중 좌표를 구분자로 분리해 좌표별로 Raycast + Rigidbody/Collider 타격 판정, 1~2분 미입력 시 클리어 연출 후 자동 초기화(여러 명이 함께하는 체험이라 그 시간 무입력이면 빈 상태로 판단), 현장에서 캘리브레이션 세부 조정",
+   result:"여러 명 동시 체험 환경에서 납품 후 1년 이상 관리자 개입 없이 운영 중"},
+  {name:"대전 SK텔레콤 안전체험교육관",type:"vr",badge:["VR","소켓"],platform:"Unity (Android) · PICO G3 VR ×약 40대 · 관리자 PC",
    img:"assets/img/skt.png",video:"assets/video/skt.mp4",
-   feature:"관리자가 시나리오를 선택하면 해당 씬으로 진입, VR 산업현장을 둘러보며 위험요소를 시선(Gaze)으로 찾는 무컨트롤러 안전체험(말비계·고소작업대 등 다중 시나리오)",
-   challenge:"PICO SDK 버전별 지원 기능과 Unity 버전 호환 문제로 정상 동작 조합을 찾는 것이 핵심 난관, 컨트롤러 없이 직관적 판정 필요",
-   impl:"시선을 2초 이상 유지하면 원형 게이지가 차오르는 Gaze 인터랙션, 관리자 PC와 소켓 통신으로 시나리오 씬 제어, 체험 종료 후 발견 요소 리뷰 및 정답 안내(OPL)"},
+   plain:"VR 고글을 쓰고 공사 현장을 둘러보며 위험한 곳을 2초간 바라보면 '찾음'으로 표시됩니다. 교육장의 VR 기기 약 40대를 관리자 PC 한 대로 제어합니다.",
+   feature:"관리자가 시나리오를 선택하면 해당 씬으로 진입, VR 산업현장에서 위험요소를 시선(Gaze)으로 찾는 무컨트롤러 안전체험(말비계·고소작업대 등 시나리오 5~6개, 시나리오당 위험요소 약 10개)",
+   challenge:"약 40대 기기의 연결 상태를 관리자가 한눈에 파악하고 끊김에 대응해야 함. PICO SDK·Unity 버전 호환 문제(매니페스트 오류·빌드 실패)로 정상 동작 조합 확보 필요",
+   impl:"관리자 PC와 소켓 통신으로 시나리오 씬 제어, 주기적 확인 신호에 답신이 없으면 끊김으로 판정해 재연결 시도하고 관리자 화면에 표시, 시선 2초 유지 시 게이지가 차는 Gaze 판정(1초는 빠르고 3초는 느리다는 체험 피드백으로 결정), 체험 후 발견 요소 리뷰 및 정답 안내(OPL)",
+   result:"VR 기기 약 40대 동시 운영, 2024년부터 현재까지 운영 중"},
   {name:"대구 IM뱅크 금융박물관",type:"hw",badge:["시리얼","하드웨어"],platform:"Unity (Windows) · RS-232",
    img:"assets/img/imbank.png",video:"assets/video/imbank.mp4",
+   plain:"전시장의 물리 버튼을 누르면 영상이 재생·정지·건너뛰기됩니다. 버튼을 연달아 누르거나 연결이 잠시 끊겨도 영상이 꼬이지 않습니다.",
    feature:"물리 버튼 패널(재생 2 / 정지·건너뛰기 2)의 입력에 따라 영상을 제어하는 인터랙티브 관람 프로그램",
-   challenge:"정지·건너뛰기는 재생 중에만 동작하도록 상태를 관리하고, 중복 신호·통신 끊김에 대한 예외 처리 필요",
-   impl:"RS-232 시리얼 프로토콜로 하드웨어 신호를 수신·파싱해 영상 제어에 매핑, 재생 상태 기반 입력 제어 및 통신 예외 처리로 안정적 운영 구현"},
-  {name:"설악산 탐방안내소",type:"kiosk",badge:["로컬라이징","키오스크"],platform:"Unity (Windows) · 터치 키오스크",
+   challenge:"버튼 입력이 중복으로 들어와 재생 중인 영상이 처음부터 다시 시작되는 문제, 정지·건너뛰기는 재생 중에만 동작해야 하고 통신이 끊기면 영상과 연결된 하드웨어가 멈출 위험",
+   impl:"하드웨어 담당이 정의한 RS-232 프로토콜을 수신·파싱해 영상 제어에 매핑, 재생 상태 플래그로 재생 중 중복 입력 차단, 주기적으로 확인 신호를 보내 응답이 없으면 끊김으로 판정 후 자동 재연결",
+   result:"중복 재생 문제 해소, 통신 끊김 시 관리자 개입 없이 자동 복구"},
+  {name:"설악산 탐방안내소",type:"kiosk",badge:["다국어","키오스크"],platform:"Unity (Windows) · 터치 키오스크",
    img:"assets/img/seorak.png",video:null,
-   feature:"지역(4개) → 관광명소(지역별 약 12개) → 상세정보 순으로 탐색하는 다국어(한/영/중/일) 정보검색 키오스크",
-   challenge:"4개 언어 전환 시 전체 UI가 어긋남 없이 실시간 교체되어야 하고, 일정 시간 미입력 시 메인으로 자동 복귀하는 무인 운영 처리 필요",
-   impl:"언어 선택 시 Event 기반으로 화면 전체의 텍스트·이미지를 실시간 교체하는 로컬라이징 구조, 미입력 타임아웃 시 메인 복귀 처리로 무인 안정성 확보"}
+   plain:"화면을 눌러 지역과 명소를 찾아보는 안내 키오스크. 언어 버튼 하나로 모든 화면이 한/영/중/일로 바뀝니다.",
+   feature:"지역(4개) → 관광명소(총 29곳) → 상세정보 순으로 탐색하는 다국어(한/영/중/일) 정보검색 키오스크",
+   challenge:"언어 전환 시 여러 화면에 흩어진 이미지가 빠짐없이 한 번에 바뀌어야 하고, 일정 시간 미입력 시 메인으로 자동 복귀하는 무인 운영 처리 필요",
+   impl:"언어 변경을 이벤트로 알리면 각 화면 요소가 이를 구독해 디자이너가 제작한 언어별 이미지로 스스로 교체하는 구조(관리 코드가 화면 요소를 일일이 알 필요가 없어 화면을 추가해도 수정 불필요), 1분 미입력 시 메인 복귀·초기화"}
 ];
 const filters=[{k:"all",l:"전체"},{k:"game",l:"게임"},{k:"vr",l:"VR"},{k:"hw",l:"하드웨어"},{k:"kiosk",l:"키오스크"}];
 let active="all";
@@ -282,10 +307,12 @@ function render(){
       <div class="body">
         <div class="pname">${p.name}</div>
         <div class="plat">${p.platform}</div>
+        <div class="plain">${p.plain}</div>
         <div class="rows">
           <div class="row"><div class="k">기능</div><div class="v">${p.feature}</div></div>
           <div class="row"><div class="k">챌린지</div><div class="v">${p.challenge}</div></div>
           <div class="row impl"><div class="k">구현</div><div class="v">${p.impl}</div></div>
+          ${p.result?`<div class="row result"><div class="k">결과</div><div class="v">${p.result}</div></div>`:""}
         </div>
       </div>
     </article>`).join("");
